@@ -1,8 +1,12 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 
 
 export default function Home() {
   const [text,setText]= useState(' ');
+
+  useEffect(()=>{
+    handleClearClick();
+  },[])
 
 
   const handleCopy=()=>{
@@ -28,12 +32,11 @@ export default function Home() {
   }
 
   const handleClearClick = ()=>{
-    let newText1=" ";
+    let newText1="";
     setText(newText1)
   }
   
   const handleOnChange = (event) =>{
-    //console.log("on change");
     setText(event.target.value);
   }
   
